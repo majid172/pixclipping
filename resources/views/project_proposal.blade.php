@@ -31,9 +31,14 @@
                             <div class="col-12">
                                 <div class="row">
                                     <div class="col-6 p-0">
-                                        <label for="name"> Name <span style="color:red">*</span></label>
-                                        <input type="text" name="name" id="name" value="{{ old('name') }}" class="form-control" placeholder="Enter Your Name" required>
+                                        <label for="name">Name <span style="color:red">*</span></label>
+                                        <input type="text" name="name" id="name" value="{{ old('name') }}" class="form-control @error('name') is-invalid @enderror" placeholder="Enter Your Name" required>
+                                        
+                                        @error('name')
+                                        <div class="invalid-feedback">{{ $message }}</div>
+                                        @enderror
                                     </div>
+                                    
                                     <div class="col-6 ps-1 pe-0">
                                         <label for="designation">Designation <span style="color:red">*</span></label>
                                         <input type="text" name="designation" value="{{ old('designation') }}" id="designation" class="form-control" placeholder="Enter Your Designation" required>

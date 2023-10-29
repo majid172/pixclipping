@@ -6,6 +6,7 @@ use App\Mail\ContactMail;
 use App\Mail\ProposalMail;
 use App\Models\PathServices;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\URL;
 
@@ -183,19 +184,29 @@ class IndexController extends Controller
 
     public function sendProposal(Request $request)
     {
-        // $request->validate([
-        //     'name' =>'required|string|min:3',
-        //     'designation' => 'required|string|min:3',
-        //     'company_name' => 'required|string|min:3',
-        //     'url' => 'required',
-        //     'email' => 'required|email',
-        //     'phone' => 'required|integer',
-        //     'img_link' => 'required|string',
-        //     'budget' => 'required',
-        //     'description' => 'required'
-        // ]);
+        $request->validate([
+            'name' =>'required|string|min:3',
+            'designation' => 'required|string|min:3',
+            'company_name' => 'required|string|min:3',
+            'url' => 'required',
+            'email' => 'required|email',
+            'phone' => 'required|integer',
+            'img_link' => 'required|string',
+            'budget' => 'required',
+            'description' => 'required'
+        ]);
         $data = $request->all();
         Mail::to('info@pixclipping.com')->send(new ProposalMail($data));
         return redirect()->back();
     }
+
+    public function clearCache()
+    {
+        Artisan::call('cache:clear');
+        Artisan::call('optimize:clear');
+        Artisan::call('route:clear');
+        Artisan::call('view:clear');
+        return 'All cache clear ...';
+    }
 }
+

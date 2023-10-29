@@ -35,6 +35,8 @@ Route::post('/send-message',[IndexController::class,'sendMessage'])->name('send-
 Route::get('/project-proposal',[IndexController::class,'projectProposal'])->name('project.proposal');
 Route::post('/project-proposal',[IndexController::class,'sendProposal'])->name('send.project-proposal');
 
+Route::get('/clear',[IndexController::class,'clearCache']);
+
 Auth::routes(['verify' => true]);
 Route::get('login', [LoginController::class, 'index'])->name('login');
 Route::post('login', [LoginController::class, 'login'])->name('login');
