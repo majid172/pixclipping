@@ -41,8 +41,12 @@ class IndexController extends Controller
     {
         $title = 'Price';
         $pathServices = PathServices::where('status', 'active')->get();
-        
         return  view('price',compact('title','pathServices'));
+    }
+    public function servicePrice(Request $request)
+    {
+        $pathServices = PathServices::where('id',$request->service_id)->first();
+        return response()->json($pathServices);
     }
     public function workflow()
     {

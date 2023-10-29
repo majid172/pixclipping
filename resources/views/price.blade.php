@@ -35,7 +35,7 @@
                 <div class="col-4">
                     <div class="input-group">
                         <span class="input-group-text">Services</span>
-                        <select class="form-select services">
+                        <select class="form-select services" id="service_name">
                             <option>Select Service</option>
                            
                             @isset($pathServices)
@@ -59,7 +59,7 @@
                 <div class="col-4">
                     <div class="input-group">
                         <span class="input-group-text">Quantity</span>
-                        <input type="number" class="form-control quantity bg-white" value="1"/>
+                        <input type="number" class="form-control quantity bg-white" min=1 value="1"/>
                     </div>
                 </div>
             </div>
@@ -67,7 +67,7 @@
                 <table class="table table-bordered text-center h4 text-capitalize">
                     <tbody>
                     <tr>
-                        <td class="s-service text-secondary"><span id="serviceTxt" style="font-size: 18px;">Photo Retouching</span> </td>
+                        <td class="s-service text-secondary"><span id="serviceTxt" style="font-size: 18px;">@lang('Clipping Path')</span> </td>
                         <td class="s-turnaround text-secondary" style="font-size: 18px;"><span id="deliveryTxt">6</span> Hours Turnaround Time </td>
                         <td class="s-images text-secondary" style="font-size: 18px;"><span id="qtyTxt">1</span> Images</td>
                     </tr>
@@ -75,7 +75,7 @@
                 </table>
             </div>
                    
-            <div class="row justify-content-center text-center items">
+            <div class="row justify-content-center text-center items" id="price_card">
                 <div class="col-12 col-md-6 col-lg-4 align-self-center text-center item">
                     <div class="card-box pricing">
                         <img src="{{asset('front-assets/images/price_icon/cube.png')}}" alt="price_icon" style="width: 50px;">
@@ -184,8 +184,7 @@
                 <div class="col-2"></div>
                 <div class="col-8">
                     <h3 class="mb-3 text-white" style="letter-spacing: .5px">@lang('Affordable editing services that deliver excellence.')</h3>
-                    <p class="mt-1" style="letter-spacing: 1px">@lang('Introducing PixClipping: Unbeatable services & benefits, unmatched price. Client-centric approach: Quality, delivery, support - all optimised for your benefit. One-stop solution: From order to image delivery, at an affordable cost.
-')</p>
+                    <p class="mt-1" style="letter-spacing: 1px">@lang('Introducing PixClipping: Unbeatable services & benefits, unmatched price. Client-centric approach: Quality, delivery, support - all optimised for your benefit. One-stop solution: From order to image delivery, at an affordable cost.')</p>
                 </div>
                 <div class="col-2"></div>
             </div>
@@ -291,8 +290,6 @@
 @endsection
 
 @section('page-script')
-
-
 <script>
 $('.owl-carousel').owlCarousel({
     autoplay:true,
@@ -316,9 +313,76 @@ $('.owl-carousel').owlCarousel({
         }
     }
 });
-
 </script>
 
+<script>
+    $('#service_name').on('change',function(){
+        var service_id = $(this).val();
+        $.ajax({
+            type:'GET',
+            url:"{{route('price.service-name')}}",
+            data:{
+                service_id:service_id
+            },
+            success: function(response) {
+                var packages = JSON.parse(response.packages);
+                $('#serviceTxt').text(response.service_name);
+                $('#price_card').html('');
+
+                if (packages.length > 0) {
+                    var markup = '';
+
+                    $.each(packages, function(index, value) {
+                        markup += `
+
+                        <div class="col-12 col-md-6 col-lg-4 align-self-center text-center item">
+                    <div class="card-box pricing">
+                        <img src="{{asset('front-assets/images/price_icon/cube.png')}}" alt="price_icon" style="width: 50px;">
+                        <h4 class="text-secondary">${value.package_name}</h4>
+                        <span class="price text-primary">${value.price}</span>
+
+                        <p class="paragraph">@lang('Images containing the following information and a simple touchup request will come under the basic category.')</p>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item d-flex justify-content-between align-items-center text-left">
+                                <span>@lang('Les design and simple edge')</span>
+                                <i class="icon-min m-0 las la-check-circle text-right"></i>
+
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-center text-left">
+                                <span>@lang('Single diamond')</span>
+                                <i class="icon-min m-0 las la-check-circle text-right"></i>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-center text-left">
+                                <span>@lang('Single gemstone')</span>
+                                <i class="icon-min m-0 las la-check-circle text-right"></i>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-center text-left">
+                                <span>@lang('Cluster ring')</span>
+                                <i class="icon-min m-0 las la-check-circle text-right"></i>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-center text-left">
+                                <span>@lang('Long chain')</span>
+                                <i class="icon-min m-0 las la-check-circle text-right"></i>
+                            </li>
+
+                        </ul>
+                        <a href="#" class="smooth-anchor btn mx-auto primary-button">@lang('See Sample') <i class="las la-chevron-circle-right"></i></a>
+                    </div>
+                </div>
 
 
+                            `;
+                    });
+
+                    $('#price_card').append(markup);
+                }
+            },
+
+            error: function (error) {
+                // Handle any errors that occur during the AJAX request
+                console.error(error);
+            }
+        })
+    })
+</script>
 @endsection

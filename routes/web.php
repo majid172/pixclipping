@@ -22,6 +22,7 @@ Route::get('/', [IndexController::class,'index'])->name('index');
 Route::get('/about-us', [IndexController::class,'aboutUs'])->name('about-us');
 Route::get('/services', [IndexController::class,'services'])->name('services');
 Route::get('/price', [IndexController::class,'price'])->name('price');
+Route::get('/price/service-name',[IndexController::class,'servicePrice'])->name('price.service-name');
 Route::get('/workflow', [IndexController::class,'workflow'])->name('workflow');
 Route::get('/portfolio', [IndexController::class,'portfolio'])->name('portfolio');
 Route::get('/free-trail', [IndexController::class,'freeTrail'])->name('free-trail');
