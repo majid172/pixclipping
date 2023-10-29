@@ -406,7 +406,6 @@ $('.owl-carousel').owlCarousel({
             },
 
             error: function (error) {
-                // Handle any errors that occur during the AJAX request
                 console.error(error);
             }
         })

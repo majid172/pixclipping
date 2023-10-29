@@ -70,7 +70,8 @@ class IndexController extends Controller
      
         $url = explode('/', URL::current());
         if (end($url) === 'clipping-path') {
-            return  view('services.clipping-path',compact('title'));
+            $pathServices = PathServices::where('slug',end($url))->first();
+            return  view('services.clipping-path',compact('title','pathSerices'));
         }else if (end($url) === 'background-remove') {
             return  view('services.background-remove',compact('title'));
         }else if (end($url) === 'shadow-making') {

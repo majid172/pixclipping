@@ -3,7 +3,7 @@
     <section id="footer" class="footer">
         <div class="container">
             <div class="row items footer-widget">
-                <div class="col-12 col-lg-4 p-0">
+                <div class="col-12 col-lg-5 p-0">
                     <div class="row">
                         <div class="branding col-12 item">
                             <div class="brand">
@@ -17,7 +17,7 @@
                                     <a href="https://www.instagram.com/pixclipping/?igshid=MmIzYWVlNDQ5Yg==" class="nav-link" target="_blank"><i class="icon lab la-instagram ml-0" ></i></a>
                                 </li>
                                <li class="nav-item">
-                                   <a href="https://www.facebook.com/" class="nav-link"><i class="icon lab la-facebook"></i></a>
+                                   <a href="https://www.facebook.com/profile.php?id=100091497998682" class="nav-link" target="_blank"><i class="icon lab la-facebook"></i></a>
                                </li>
                                <li class="nav-item">
                                    <a href="https://www.linkedin.com/" class="nav-link"><i class="icon lab la-linkedin"></i></a>
@@ -29,7 +29,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-12 col-lg-8 p-0">
+                <div class="col-12 col-lg-7 p-0">
                     <div class="row">
                         <div class="col-12 col-lg-4 item">
                             <h4 class="title">@lang('Important Links')</h4>
@@ -51,19 +51,13 @@
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="#" class="nav-link footer_link">
-
-                                       @lang('Blogs')
-                                    </a>
+                                    <a href="#" class="nav-link footer_link"> @lang('Blogs')</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="{{route('faq')}}" class="nav-link footer_link">
-
-                                       @lang('FAQ')
-                                    </a>
+                                    <a href="{{route('faq')}}" class="nav-link footer_link"> @lang('FAQ')</a>
                                 </li>
-                                <li class="nav-item">
-                                    <a href="{{route('contact')}}" class="mt-4 mr-auto ml-auto ml-lg-0 btn dark-button smooth-anchor"><i class="las la-comment"></i>SEND A MESSAGE</a>
+                                <li class="nav-item mt-4" id="message_btn">
+                                    <a href="{{route('contact')}}" class="mt-4"><i class="las la-comment me-2"></i>SEND A MESSAGE</a>
                                 </li>
                             </ul>
                         </div>
@@ -121,3 +115,17 @@
     </section>
 
 </footer>
+
+<style>
+    #message_btn a{
+        border: 2px solid  #f8ed4a;
+        color: #f8ed4a;
+        padding: 15px 20px;
+    }
+
+    #message_btn a:hover{
+        background: #f8ed4a;
+        color: var(--primary-color);
+    }
+</style>
+    
