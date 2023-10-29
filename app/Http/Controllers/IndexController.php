@@ -45,8 +45,14 @@ class IndexController extends Controller
     }
     public function servicePrice(Request $request)
     {
+        $quantity = $request->quantity;
         $pathServices = PathServices::where('id',$request->service_id)->first();
-        return response()->json($pathServices);
+        $data = [
+            'pathServices' => $pathServices,
+            'delivery_hour' => $request->delivery_hour,
+            'quantity' => $quantity,
+        ];
+        return response()->json($data);
     }
     public function workflow()
     {

@@ -32,7 +32,7 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-4">
+                <div class="col-lg-4">
                     <div class="input-group">
                         <span class="input-group-text">Services</span>
                         <select class="form-select services" id="service_name">
@@ -46,30 +46,31 @@
                         </select>
                     </div>
                 </div>
-                <div class="col-4">
+                <div class="col-lg-4">
                     <div class="input-group">
                         <span class="input-group-text">Delivery</span>
-                        <select class="form-select delivery">
-                            <option>Normal Delivery: 24 Hours</option>
-                            <option>Rush Delivery: 12 Hours</option>
-                            <option>Express Delivery: 6 Hours</option>
+                        <select class="form-select delivery" id="delivery_hour">
+                            <option value="24">Normal Delivery: 24 Hours</option>
+                            <option value="12">Rush Delivery: 12 Hours</option>
+                            <option value="6">Express Delivery: 6 Hours</option>
                         </select>
                     </div>
                 </div>
-                <div class="col-4">
+                <div class="col-lg-4">
                     <div class="input-group">
                         <span class="input-group-text">Quantity</span>
-                        <input type="number" class="form-control quantity bg-white" min=1 value="1"/>
+                        <input type="number" class="form-control quantity bg-white" id="quantity" min=1 value="1"/>
                     </div>
                 </div>
             </div>
+
             <div class="row">
                 <table class="table table-bordered text-center h4 text-capitalize">
                     <tbody>
                     <tr>
-                        <td class="s-service text-secondary"><span id="serviceTxt" style="font-size: 18px;">@lang('Clipping Path')</span> </td>
-                        <td class="s-turnaround text-secondary" style="font-size: 18px;"><span id="deliveryTxt">6</span> Hours Turnaround Time </td>
-                        <td class="s-images text-secondary" style="font-size: 18px;"><span id="qtyTxt">1</span> Images</td>
+                        <td class="s-service text-secondary"><span id="serviceTxt" style="font-size: 16px;">@lang('Clipping Path')</span> </td>
+                        <td class="s-turnaround text-secondary" style="font-size: 16px;"><span id="deliveryTxt">6</span> Hours Turnaround Time </td>
+                        <td class="s-images text-secondary" style="font-size: 16px;"><span id="qtyTxt">1</span> Images</td>
                     </tr>
                     </tbody>
                 </table>
@@ -87,7 +88,6 @@
                             <li class="list-group-item d-flex justify-content-between align-items-center text-left">
                                 <span>@lang('Les design and simple edge')</span>
                                 <i class="icon-min m-0 las la-check-circle text-right"></i>
-
                             </li>
                             <li class="list-group-item d-flex justify-content-between align-items-center text-left">
                                 <span>@lang('Single diamond')</span>
@@ -316,64 +316,91 @@ $('.owl-carousel').owlCarousel({
 </script>
 
 <script>
-    $('#service_name').on('change',function(){
-        var service_id = $(this).val();
+    $('#service_name,#delivery_hour, #quantity').on('change input', function() {
+        var service_id = $('#service_name').val();
+        var quantity = $('#quantity').val();
+        var delivery_hour = $('#delivery_hour').val();
+
         $.ajax({
             type:'GET',
             url:"{{route('price.service-name')}}",
             data:{
-                service_id:service_id
+                service_id:service_id,
+                delivery_hour: delivery_hour,
+                quantity: quantity
             },
             success: function(response) {
-                var packages = JSON.parse(response.packages);
-                $('#serviceTxt').text(response.service_name);
+                var deliveryHour = response.delivery_hour;
+                var pathServices = response.pathServices;
+                var quantity = response.quantity??1;
+                
+                var packages = JSON.parse(pathServices.packages);
+                $('#serviceTxt').text(pathServices.service_name);
+                $('#qtyTxt').text(quantity);
+                $('#deliveryTxt').text(deliveryHour);
                 $('#price_card').html('');
 
+                var markup = '';
                 if (packages.length > 0) {
-                    var markup = '';
-
                     $.each(packages, function(index, value) {
+                        var startPrice = parseFloat(value.start_price).toFixed(2);
+                        var endPrice = parseFloat(value.end_price).toFixed(2);
+                        var totalStartPrice = parseFloat(startPrice * parseFloat(quantity)).toFixed(2);
+                        var totalEndPrice = parseFloat(endPrice * parseFloat(quantity)).toFixed(2);
+
+                        if (deliveryHour == 24) {
+                            totalStartPrice *= 1;
+                            totalEndPrice *= 1;
+                        } else if (deliveryHour == 12) {
+                            totalStartPrice *= 2;
+                            totalEndPrice *= 2;
+                        }
+                        else{
+                            totalStartPrice *= 4;
+                            totalEndPrice *= 4;
+                        }
                         markup += `
+                            <div class="col-12 col-md-6 col-lg-4 align-self-center text-center item">
+                                <div class="card-box pricing">
+                                    <img src="{{asset('front-assets/images/price_icon/cube.png')}}" alt="price_icon" style="width: 50px;">
+                                    <h4 class="text-secondary">${value.package_name}</h4>`;
+                                    if(!isNaN(totalStartPrice) && !isNaN(totalEndPrice))
+                                    {
+                                        markup +=`<span class="price text-primary">$${totalStartPrice} - $${totalEndPrice}</span>`;
+                                    }
+                                    else{
+                                        markup += `<span class="price text-primary">@lang('Talk to Us')</span>`;
+                                    }
+                        
+                                markup += `<p class="paragraph">@lang('Images containing the following information and a simple touchup request will come under the basic category.')</p>
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item d-flex justify-content-between align-items-center text-left">
+                                        <span>@lang('Les design and simple edge')</span>
+                                        <i class="icon-min m-0 las la-check-circle text-right"></i>
 
-                        <div class="col-12 col-md-6 col-lg-4 align-self-center text-center item">
-                    <div class="card-box pricing">
-                        <img src="{{asset('front-assets/images/price_icon/cube.png')}}" alt="price_icon" style="width: 50px;">
-                        <h4 class="text-secondary">${value.package_name}</h4>
-                        <span class="price text-primary">${value.price}</span>
+                                    </li>
+                                    <li class="list-group-item d-flex justify-content-between align-items-center text-left">
+                                        <span>@lang('Single diamond')</span>
+                                        <i class="icon-min m-0 las la-check-circle text-right"></i>
+                                    </li>
+                                    <li class="list-group-item d-flex justify-content-between align-items-center text-left">
+                                        <span>@lang('Single gemstone')</span>
+                                        <i class="icon-min m-0 las la-check-circle text-right"></i>
+                                    </li>
+                                    <li class="list-group-item d-flex justify-content-between align-items-center text-left">
+                                        <span>@lang('Cluster ring')</span>
+                                        <i class="icon-min m-0 las la-check-circle text-right"></i>
+                                    </li>
+                                    <li class="list-group-item d-flex justify-content-between align-items-center text-left">
+                                        <span>@lang('Long chain')</span>
+                                        <i class="icon-min m-0 las la-check-circle text-right"></i>
+                                    </li>
 
-                        <p class="paragraph">@lang('Images containing the following information and a simple touchup request will come under the basic category.')</p>
-                        <ul class="list-group list-group-flush">
-                            <li class="list-group-item d-flex justify-content-between align-items-center text-left">
-                                <span>@lang('Les design and simple edge')</span>
-                                <i class="icon-min m-0 las la-check-circle text-right"></i>
-
-                            </li>
-                            <li class="list-group-item d-flex justify-content-between align-items-center text-left">
-                                <span>@lang('Single diamond')</span>
-                                <i class="icon-min m-0 las la-check-circle text-right"></i>
-                            </li>
-                            <li class="list-group-item d-flex justify-content-between align-items-center text-left">
-                                <span>@lang('Single gemstone')</span>
-                                <i class="icon-min m-0 las la-check-circle text-right"></i>
-                            </li>
-                            <li class="list-group-item d-flex justify-content-between align-items-center text-left">
-                                <span>@lang('Cluster ring')</span>
-                                <i class="icon-min m-0 las la-check-circle text-right"></i>
-                            </li>
-                            <li class="list-group-item d-flex justify-content-between align-items-center text-left">
-                                <span>@lang('Long chain')</span>
-                                <i class="icon-min m-0 las la-check-circle text-right"></i>
-                            </li>
-
-                        </ul>
-                        <a href="#" class="smooth-anchor btn mx-auto primary-button">@lang('See Sample') <i class="las la-chevron-circle-right"></i></a>
-                    </div>
-                </div>
-
-
-                            `;
+                                </ul>
+                                <a href="#" class="smooth-anchor btn mx-auto primary-button">@lang('See Sample') <i class="las la-chevron-circle-right"></i></a>
+                            </div>
+                            </div> `;
                     });
-
                     $('#price_card').append(markup);
                 }
             },
