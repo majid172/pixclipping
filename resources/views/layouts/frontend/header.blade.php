@@ -178,24 +178,24 @@
                                     <li class="nav-item"><a href="{{route('services.slug','newborn-baby-photo-editing')}}" class="nav-link">@lang('Newborn Baby Photo Editing')</a></li>
                                     <li class="nav-item"><a href="{{route('services.slug','food-photo-retouching')}}" class="nav-link">@lang('Food Photo Retouching')</a></li>
                                     <li class="nav-item"><a href="{{route('services.slug','real-estate-photo-retouching')}}" class="nav-link">@lang('Real Estate Photo Retouching')</a></li>
-                                
+                                    
                                 </ul>
                             </li>
                             <li class="nav-item dropdown">
                                 <a class="nav-link" href="#">@lang('Ecommerce')<i class="las la-angle-right"></i></a>
                                 <ul class="dropdown-menu">
-                                    <li class="nav-item"><a href="{{route('services.slug','essential-editing')}}" class="nav-link">@lang('Essential')</a></li>
-                                    <li class="nav-item"><a href="{{route('services.slug','image-optimization')}}" class="nav-link">@lang('Image Optimization')</a></li>
-                                    <li class="nav-item"><a href="{{route('services.slug','ecommerce-360-degree-editing')}}" class="nav-link">@lang('360 Degree')</a></li>
+                                    <li class="nav-item"><a href="javascript:void(0)" class="nav-link">@lang('Essential')</a></li>
+                                    <li class="nav-item"><a href="javascript:void(0)" class="nav-link">@lang('Image Optimization')</a></li>
+                                    <li class="nav-item"><a href="{javascript:void(0)" class="nav-link">@lang('360 Degree')</a></li>
                                 </ul>
                             </li>
                             <li class="nav-item dropdown">
                                 <a class="nav-link" href="#">@lang('Photography')<i class="las la-angle-right"></i></a>
                                 <ul class="dropdown-menu">
-                                    <li class="nav-item"><a href="{{route('services.slug','product-photography')}}" class="nav-link">@lang('Product Photography')</a></li>
-                                    <li class="nav-item"><a href="{{route('services.slug','jewelry-photography')}}" class="nav-link">@lang('Jewellary Photography')</a></li>
-                                    <li class="nav-item"><a href="{{route('services.slug','apparels-photography')}}" class="nav-link">@lang('Apparels Photography')</a></li>
-                                    <li class="nav-item"><a href="{{route('services.slug','school-photography')}}" class="nav-link">@lang('School Photography')</a></li>
+                                    <li class="nav-item"><a href="javascript:void(0)" class="nav-link">@lang('Product Photography')</a></li>
+                                    <li class="nav-item"><a href="javascript:void(0)" class="nav-link">@lang('Jewellary Photography')</a></li>
+                                    <li class="nav-item"><a href="javascript:void(0)" class="nav-link">@lang('Apparels Photography')</a></li>
+                                    <li class="nav-item"><a href="javascript:void(0)" class="nav-link">@lang('School Photography')</a></li>
                                 </ul>
                             </li>
 

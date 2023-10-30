@@ -5,9 +5,7 @@
     <section class=" highlights image-right">
         <div class="container">
             <div class="row align-items-center">
-                <div class="col-12 col-md-6">
-                    <img src="{{asset('front-assets/images/headshot/main.tif')}}" class="fit-image" alt="headshot Retouch">
-                </div>
+                
                 <div class="col-12 col-md-6">
                     <div class="row intro">
                         <div class="col-12 p-0">
@@ -19,6 +17,9 @@
                             <a href="#" target="_blank" class="btn get_start_btn border-1 d-inline-block">GET STARTED <i class="las la-angle-right"></i></a>
                         </div>
                     </div>
+                </div>
+                <div class="col-12 col-md-6">
+                    <img src="{{asset('front-assets/images/headshot/main.png')}}" class="fit-image" alt="headshot Retouch">
                 </div>
             </div>
         </div>
@@ -107,7 +108,7 @@
 
 
     <!-- Benefits -->
-    <section class="section-2 bg-white title">
+    <section class="section-2 title">
         <div class="overflow-holder">
             <div class="container">
                 <div class="row text-center intro">
@@ -120,7 +121,7 @@
                 </div>
                 <div class="row align-items-center">
                     <div class="col-12 col-md-6">
-                        <img src="/front-assets/images/headshot/mocup.png" class="fit-image" alt="mocup">
+                        <img src="/front-assets/images/headshot/main_2.png" class="fit-image" alt="mocup">
                     </div>
                     <div class="col-12 col-md-6">
                         <div class="row intro">
@@ -166,7 +167,7 @@
         </div>
     </section>
 
-    <section class="title">
+    <section class="title bg-white">
         <div class="overflow-holder">
             <div class="container">
                 <div class="row text-center intro">
@@ -199,7 +200,7 @@
     </section>
     
     <!-- Partners -->
-    <section class="section-2 bg-white">
+    <section class="section-2 bg-light">
         <div class="overflow-holder">
             <div class="container">
                 <div class="row text-center intro">
@@ -210,16 +211,16 @@
                 </div>
                   
                 <div class="row">
-                    <div class="col-sm-12 col-md-4 mb-3">
-                        <a href="{{asset('front-assets/images/headshot/one.png')}}"  data-fancybox="gallery" data-caption="Headshot image one">
+                    <div class="col-sm-12 col-md-3 mb-3">
+                        <a href="{{asset('front-assets/images/headshot/one.jpg')}}"  data-fancybox="gallery" data-caption="Headshot image one">
                             <figure class="snip1205 black">
-                                <img src="{{asset('front-assets/images/headshot/one.png')}}" alt="sample44"/>
+                                <img src="{{asset('front-assets/images/headshot/one.jpg')}}" alt="sample44"/>
                                 <i class="las la-eye"></i>
                             </figure>
                         </a>
                     </div>
     
-                    <div class="col-sm-12 col-md-4 mb-3">
+                    <div class="col-sm-12 col-md-3 mb-3">
                         <a href="{{asset('front-assets/images/headshot/two.png')}}"  data-fancybox="gallery" data-caption="Headshot image two">
                             <figure class="snip1205 blue">
                                 <img src="{{asset('front-assets/images/headshot/two.png')}}" alt="sample44"/>
@@ -228,10 +229,18 @@
                         </a>
                     </div>
     
-                    <div class="col-sm-12 col-md-4 mb-3">
-                        <a href="{{asset('front-assets/images/headshot/three.png')}}"  data-fancybox="gallery" data-caption="Headshot image three">
+                    <div class="col-sm-12 col-md-3 mb-3">
+                        <a href="{{asset('front-assets/images/headshot/three.jpg')}}"  data-fancybox="gallery" data-caption="Headshot image three">
                             <figure class="snip1205 black">
-                                <img src="{{asset('front-assets/images/headshot/three.png')}}" alt="sample44"/>
+                                <img src="{{asset('front-assets/images/headshot/three.jpg')}}" alt="sample44"/>
+                                <i class="las la-eye"></i>
+                            </figure>
+                        </a>
+                    </div>
+                    <div class="col-sm-12 col-md-3 mb-3">
+                        <a href="{{asset('front-assets/images/headshot/four.png')}}"  data-fancybox="gallery" data-caption="Headshot image three">
+                            <figure class="snip1205 black">
+                                <img src="{{asset('front-assets/images/headshot/four.png')}}" alt="sample44"/>
                                 <i class="las la-eye"></i>
                             </figure>
                         </a>

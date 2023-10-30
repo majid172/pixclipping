@@ -2,30 +2,28 @@
 
 @section('content')
     <!-- Dedicated to exceeding expectation-->
-    <section class="highlights image-right">
+    <section class="highlights image-right sec_img">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-12 col-md-6">
-                    <img src="{{asset('front-assets/images/ghost/img1.png')}}" class="fit-image" alt="Jewelry Retouch">
-                </div>
-                <div class="col-12 col-md-6">
-                    <div class="row intro">
+                    <div class="row intro mt-5">
                         <div class="col-12 p-0">
                             <h3 class="featured alt" style="opacity: 0.7; font-weight: 500;">{{isset($title)?$title :''}} Services</h3>
-                            <h2 class="text-secondary">@lang('Introducing Affordable ') : <span class="text">@lang('
+                            <h2 class="text-light">@lang('Introducing Affordable') : <span class="text">@lang('
                                     Image Masking Service')</span></h2>
-                            <p>@lang('Experience flawless image masking with us! Effortlessly extract intricate elements like hairs and furs. Seamlessly integrate subjects into any background. Elevate your editing game now!
-
-                                ')</p>
+                            <p class="text-light">@lang('Experience flawless image masking with us! Effortlessly extract intricate elements like hairs and furs. Seamlessly integrate subjects into any background. Elevate your editing game now!')</p>
                             <a href="#" target="_blank" class="btn primary-button d-inline-block me-2">@lang('FREE TRAIL') <i class="las la-angle-right"></i></a>
                             <a href="#" target="_blank" class="btn get_start_btn border-1 d-inline-block">@lang('GET STARTED') <i class="las la-angle-right"></i></a>
                         </div>
                     </div>
                 </div>
+                <div class="col-12 col-md-6">
+                    {{-- <img src="{{asset('front-assets/images/image_masking/main.png')}}" class="fit-image" alt="Jewelry Retouch"> --}}
+                </div>
+                
             </div>
         </div>
     </section>
-
 
     <!-- Features -->
     <section id="featured" class="section-1 bg-white offers">
@@ -451,12 +449,24 @@
 
 @endsection
 
+@push('style')
+    <style>
+        .sec_img {
+            background-image: url(http://127.0.0.1:8000/front-assets/images/image_masking/main.png);
+            background-size: cover;
+            background-attachment: unset;
+            background-repeat: no-repeat;
+            height: 490px;
+            padding-top: 80px;
+            position: relative;
+        }
+    </style>
+@endpush
+
 @section('page-script')
 <script>
-
     Fancybox.bind('[data-fancybox="gallery"]', {
     });
-    
-    
-    </script>
+  
+</script>
 @endsection

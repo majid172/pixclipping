@@ -67,9 +67,10 @@ class IndexController extends Controller
     }
     public function singleService($slug)
     {
+   
         $title = ucwords(preg_replace("/[^a-zA-Z0-9]+/", " ", $slug));
-     
         $url = explode('/', URL::current());
+        
         if (end($url) === 'clipping-path') {
             $pathServices = PathServices::where('slug',end($url))->first();
             return  view('services.clipping-path',compact('title','pathSerices'));
@@ -101,9 +102,9 @@ class IndexController extends Controller
             return  view('services.newborn-baby-photo-editing',compact('title'));
         }else if (end($url) === 'food-photo-retouching') {
             return  view('services.food-photo-retouching',compact('title'));
-        }else if (end($url) === 'real-estate-photo-editing') {
+        }else if (end($url) === 'real-estate-photo-retouching') {
             return  view('services.real-estate-photo-editing',compact('title'));
-            }else if (end($url) === 'essential-editing') {
+        }else if (end($url) === 'essential-editing') {
             return  view('services.essential-editing',compact('title'));
         }else if (end($url) === 'amazon-e-bay-shopify') {
             return  view('services.amazon-e-bay-shopify',compact('title'));

@@ -1,6 +1,7 @@
 @extends('layouts.frontend.app')
 
 @section('content')
+
     <!-- Dedicated to exceeding expectation-->
     <section class=" highlights image-right">
         <div class="container">
@@ -112,20 +113,19 @@
         </div>
     </section>
 
-    <section class="title">
+    <section class="title bg-white">
         <div class="overflow-holder">
             <div class="container">
                 <div class="row text-center intro gx-5">
                     <div class="col-12 heading">
-                        <h3 class="mb-0">Why Should You Choose US?
-                        </h3>
+                        <h3 class="mb-0">Why Should You Choose US?</h3>
                         <p class="mt-2 ">With our efficient clipping services, we ensure unwavering quality while respecting your time and goals. Your convenience is our priority.
                         </p>
                     </div>
                 </div>
                 <div class="row align-items-center gx-5">
                     <div class="col-12 col-md-5">
-                        <img src="/front-assets/images/clipping_path/sampo_botole/img1.png" class="fit-image" alt="Jewelry Retouch">
+                        <img src="/front-assets/images/real_estate/mocup.png" class="fit-image" alt="real_easte_retouch">
                     </div>
                     <div class="col-12 col-md-7">
                         <div class="row intro">
@@ -148,95 +148,59 @@
 
 
     <!-- Partners --> 
-    <section class="section-2 bg-light title">
+    <section class="section-2 bg-white title">
         <div class="overflow-holder">
             <div class="container">
                 <div class="row text-center intro">
                     <div class="col-12 heading">
-                        <h3 class="mb-0">@lang('Mastering Color & Tone Precision')</h3>
-                        <p class="mt-2">@lang('Discover our expertise in image touch-ups! Explore our dazzling jewelry photo collection')</p>
+                        <h3 class="mb-0">@lang('Professional Image Background Remover')</h3>
+                        <p class="mt-2">@lang('Transform your images with expert background removal and manipulation according to your vision - check out our impressive samples!')</p>
                     </div>
                 </div>
-                    
-                <div class="row justify-content-center">
-                    <div class="col-xl-2 col-lg-4  d-flex flex-column align-items-center justify-content-center">
-                        <div class="jewelary-box ">
-                            <div class="jewelary-img">
-                                <a href="{{asset('front-assets/images/clipping_path/partner/flamepan.png')}}"  data-fancybox="gallery" data-caption="Caption #1">
-                                    <img src="{{asset('front-assets/images/clipping_path/partner/flame.png')}}" alt="">
-                                </a>
-                                
-                            </div>
-                            <div class="jewelary-btn d-flex align-items-center justify-content-center">
-                                <a href="#">Makeapointment</a>
-                            </div>
-                        </div>
+                  
+                <div class="row">
+                    <div class="col-sm-12 col-md-3 mb-3">
+                        <a href="{{asset('front-assets/images/real_estate/one.png')}}"  data-fancybox="gallery" data-caption="Caption #1">
+                            <figure class="snip1205 green">
+                                <img src="{{asset('front-assets/images/real_estate/one.png')}}" alt="sample44"/>
+                                <i class="las la-eye"></i>
+                            </figure>
+                        </a>
                     </div>
-                    <div class="col-xl-2 col-lg-4  d-flex flex-column align-items-center justify-content-center">
-                        <div class="jewelary-box ">
-                            <div class="jewelary-img1 ">
-                                <a href="{{asset('front-assets/images/clipping_path/partner/Greenerypan.png')}}"  data-fancybox="gallery" data-caption="Caption #1">
-                                    <img src="{{asset('front-assets/images/clipping_path/partner/greenery.png')}}" alt="">
-                                </a>
-                            </div>
-                            <div class="jewelary-img2">
-                                <a href="{{asset('front-assets/images/clipping_path/partner/Hazelnutpan.png')}}"  data-fancybox="gallery" data-caption="Caption #1">
-                                    <img src="{{asset('front-assets/images/clipping_path/partner/Hazelnut.png')}}" alt="">
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-2 col-lg-4   d-flex flex-column align-items-center justify-content-center">
-                        <div class="jewelary-box">
-                            <div class="jewelary-img3">
     
-                                <a href="{{asset('front-assets/images/clipping_path/partner/Islandpan.png')}}"  data-fancybox="gallery" data-caption="Caption #1">
-                                    <img src="{{asset('front-assets/images/clipping_path/partner/Island.png')}}" alt="">
-                                </a>
-                            </div>
-                            <div class="jewelary-img4">
-                                <a href="{{asset('front-assets/images/clipping_path/partner/Lapispan.png')}}"  data-fancybox="gallery" data-caption="Caption #1">
-                                    <img src="{{asset('front-assets/images/clipping_path/partner/Lapis.png')}}" alt="">
-                                </a>
-                            </div>
-                        </div>
+                    <div class="col-sm-12 col-md-3 mb-3">
+                        <a href="{{asset('front-assets/images/real_estate/two.png')}}"  data-fancybox="gallery" data-caption="Caption #1">
+                            <figure class="snip1205 blue">
+                                <img src="{{asset('front-assets/images/real_estate/two.png')}}" alt="sample44"/>
+                                <i class="las la-eye"></i>
+                            </figure>
+                        </a>
                     </div>
-                    <div class="col-xl-2 col-lg-4  d-flex flex-column align-items-center justify-content-center">
-                        <div class="jewelary-box">
-                            <div class="jewelary-img5">
-                                <a href="{{asset('front-assets/images/clipping_path/partner/Palepan.png')}}"  data-fancybox="gallery" data-caption="Caption #1">
-                                    <img src="{{asset('front-assets/images/clipping_path/partner/Pale.png')}}" alt="">
-                                </a>
-                            </div>
-                            <div class="jewelary-img6">
-                                <a href="{{asset('front-assets/images/clipping_path/partner/Pinkpan.png')}}"  data-fancybox="gallery" data-caption="Caption #1">
-                                    <img src="{{asset('front-assets/images/clipping_path/partner/Pink.png')}}" alt="">
-                                </a>
-                            </div>
-                        </div>
+    
+                    <div class="col-sm-12 col-md-3 mb-3">
+                        <a href="{{asset('front-assets/images/real_estate/three.png')}}"  data-fancybox="gallery" data-caption="Caption #1">
+                            <figure class="snip1205 black">
+                                <img src="{{asset('front-assets/images/real_estate/three.png')}}" alt="sample44"/>
+                                <i class="las la-eye"></i>
+                            </figure>
+                        </a>
                     </div>
-                    <div class="col-xl-2 col-lg-4  d-flex flex-column align-items-center justify-content-center">
-                        <div class="jewelary-box">
-                            <div class="jewelary-img7">
-                                <a href="{{asset('front-assets/images/clipping_path/partner/Primrosepan.png')}}"  data-fancybox="gallery" data-caption="Caption #1">
-                                    <img src="{{asset('front-assets/images/clipping_path/partner/Primrose.png')}}" alt="">
-                                </a>
-                            </div>
-                            <div class="jewelary-img8">
-                                <a href="{{asset('front-assets/images/clipping_path/partner/Islandpan.png')}}"  data-fancybox="gallery" data-caption="Caption #1">
-                                    <img src="{{asset('front-assets/images/clipping_path/partner/Island.png')}}" alt="">
-                                </a>
-                            </div>
-                        </div>
+                    <div class="col-sm-12 col-md-3 mb-3">
+                        <a href="{{asset('front-assets/images/real_estate/four.png')}}"  data-fancybox="gallery" data-caption="Caption #1">
+                            <figure class="snip1205 orange ">
+                                <img src="{{asset('front-assets/images/real_estate/four.png')}}" alt="sample44"/>
+                                <i class="las la-eye"></i>
+                            </figure>
+                        </a>
                     </div>
+    
                 </div>
-            
             </div>
         </div>
     </section>
 
     <!-- Pricing -->
-    <section class="section-2 bg-light title">
+    <section class="section-2  title">
         <div class="overflow-holder">
             <div class="container">
                 <div class="row text-center intro ">
@@ -311,7 +275,7 @@
     @include('layouts.include.speciality')
 
     {{-- related services --}}
-    <section id="services" class="section-1 offers pb-5">
+    <section id="services" class="section-1 offers bg-light pb-5">
         <div class="container">
             <div class="row text-center intro">
                 <div class="col-12 heading">
