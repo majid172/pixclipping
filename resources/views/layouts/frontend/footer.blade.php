@@ -35,7 +35,7 @@
                             <h4 class="title">@lang('Important Links')</h4>
                             <ul class="navbar-nav">
                                 <li class="nav-item">
-                                    <a href="{{route('home')}}" class="nav-link footer_link">
+                                    <a href="{{route('index')}}" class="nav-link footer_link">
                                         @lang('Home')
                                     </a>
                                 </li>

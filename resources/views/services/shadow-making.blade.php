@@ -257,7 +257,7 @@
                         <img src="{{asset('front-assets/images/clipping_path/price/simple.png')}}" class="icon" alt="pricing icon">
                        
                         <h4>@lang('Simple')</h4>
-                        <span class="price">@lang('$3.50 - $4.99')</span>
+                        <span class="price">@lang('$0.20')</span>
                         <ul class="list-group list-group-flush mt-4">
                             <li class="list-group-item d-flex justify-content-between align-items-center text-left">
                                 <span>@lang('Les design and simple edge')</span>
@@ -289,7 +289,7 @@
                     <div class="card-box pricing">
                         <img src="{{asset('front-assets/images/clipping_path/price/medium.png')}}" class="icon" alt="pricing icon">
                         <h4>@lang('Medium')</h4>
-                        <span class="price">@lang('$5.00 - $8.99')</span>
+                        <span class="price">@lang('$0.30')</span>
                         <ul class="list-group list-group-flush mt-4">
                             <li class="list-group-item d-flex justify-content-between align-items-center text-left">
                                 <span>@lang('Curvy design')</span>
@@ -321,7 +321,7 @@
                         <img src="{{asset('front-assets/images/clipping_path/price/complex.png')}}" class="icon" alt="pricing icon">
                         
                         <h4>@lang('Complex')</h4>
-                        <span class="price">@lang('Talk to us')</span>
+                        <span class="price">@lang('$0.50')</span>
                         <ul class="list-group list-group-flush mt-4">
                             <li class="list-group-item d-flex justify-content-between align-items-center text-left">
                                 <span>Complex design</span>

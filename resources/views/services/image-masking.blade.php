@@ -18,7 +18,7 @@
                     </div>
                 </div>
                 <div class="col-12 col-md-6">
-                    {{-- <img src="{{asset('front-assets/images/image_masking/main.png')}}" class="fit-image" alt="Jewelry Retouch"> --}}
+                   
                 </div>
                 
             </div>
@@ -264,7 +264,7 @@
                         <img src="{{asset('front-assets/images/background_remove/price icon/simple.png')}}" class="icon" alt="pricing icon">
                        
                         <h4>@lang('Simple')</h4>
-                        <span class="price">@lang('$3.50 - $4.99')</span>
+                        <span class="price">@lang('$0.49 - $1.49')</span>
                         <ul class="list-group list-group-flush mt-4">
                             <li class="list-group-item d-flex justify-content-between align-items-center text-left">
                                 <span>@lang('Les design and simple edge')</span>
@@ -296,7 +296,7 @@
                     <div class="card-box pricing">
                         <img src="{{asset('front-assets/images/background_remove/price icon/medium.png')}}" class="icon" alt="pricing icon">
                         <h4>@lang('Medium')</h4>
-                        <span class="price">@lang('$5.00 - $8.99')</span>
+                        <span class="price">@lang('$1.50 - $2.99')</span>
                         <ul class="list-group list-group-flush mt-4">
                             <li class="list-group-item d-flex justify-content-between align-items-center text-left">
                                 <span>@lang('Curvy design')</span>
@@ -452,7 +452,7 @@
 @push('style')
     <style>
         .sec_img {
-            background-image: url(http://127.0.0.1:8000/front-assets/images/image_masking/main.png);
+            background-image: url("{{asset('front-assets/images/image_masking/main.png')}}");
             background-size: cover;
             background-attachment: unset;
             background-repeat: no-repeat;

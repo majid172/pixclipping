@@ -247,10 +247,8 @@
         <div class="container">
             <div class="row text-center intro">
                 <div class="col-12 heading">
-                    <h3>@lang('Value-Based Pricing for Clipping Path Services
-                        ')</h3>
-                    <p class="text-max-800">@lang('The best clipping path service is available at a reasonable price. Get a price estimate for your particular needs. No additional fees or charges are included in our fixed rate.
-                        ')</p>
+                    <h3>@lang('Introducing Jewelry Retouching Services: Unlocking Value-Based Pricing!')</h3>
+                    <p class="text-max-800">@lang('Get top-quality at unbeatable prices! Customize your orders without hidden fees. Transparent and affordable pricing." Your priority, our promise.')</p>
                 </div>
             </div>
             <div class="row justify-content-center text-center items">

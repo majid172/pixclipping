@@ -182,11 +182,11 @@
                                 </ul>
                             </li>
                             <li class="nav-item dropdown">
-                                <a class="nav-link" href="#">@lang('Ecommerce')<i class="las la-angle-right"></i></a>
+                                <a class="nav-link" href="#ecommerce">@lang('Ecommerce')<i class="las la-angle-right"></i></a>
                                 <ul class="dropdown-menu">
                                     <li class="nav-item"><a href="javascript:void(0)" class="nav-link">@lang('Essential')</a></li>
                                     <li class="nav-item"><a href="javascript:void(0)" class="nav-link">@lang('Image Optimization')</a></li>
-                                    <li class="nav-item"><a href="{javascript:void(0)" class="nav-link">@lang('360 Degree')</a></li>
+                                    <li class="nav-item"><a href="javascript:void(0)" class="nav-link">@lang('360 Degree')</a></li>
                                 </ul>
                             </li>
                             <li class="nav-item dropdown">
@@ -235,7 +235,7 @@
 
             <ul class="navbar-nav action">
                 <li class="nav-item ml-3">
-                    <a href="javascript:void(0)" target="_blank" class="btn ml-lg-auto primary-button"><i class="las la-shopping-bag" style="font-size: 24px"></i>ORDER NOW</a>
+                    <a href="{{route('home.order.list')}}" target="_blank" class="btn ml-lg-auto primary-button"><i class="las la-shopping-bag" style="font-size: 24px"></i>ORDER NOW</a>
                     
                 </li>
             </ul>

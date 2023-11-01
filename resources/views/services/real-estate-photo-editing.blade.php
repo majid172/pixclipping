@@ -3,23 +3,26 @@
 @section('content')
 
     <!-- Dedicated to exceeding expectation-->
-    <section class=" highlights image-right">
+
+    <section class="highlights image-right sec_img">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-12 col-md-6">
-                    <img src="{{asset('front-assets/images/home/Home1.png')}}" class="fit-image" alt="Jewelry Retouch">
-                </div>
-                <div class="col-12 col-md-6">
-                    <div class="row intro">
+                    <div class="row intro mt-5">
                         <div class="col-12 p-0">
-                            <h3 class="featured alt" style="opacity: 0.7; font-weight: 500;">{{isset($title)?$title :''}} Services</h3>
-                            <h2 class="text-secondary">Professional  <span class="text">Photo</span></h2>
-                            <p>Eliminate unwanted image backdrops effortlessly while ensuring the utmost quality. Restore focus and clarity by correcting background imperfections with our exceptional expertise.</p>
-                            <a href="#" target="_blank" class="btn primary-button d-inline-block me-2">FREE TRAIL <i class="las la-angle-right"></i></a>
-                            <a href="#" target="_blank" class="btn get_start_btn border-1 d-inline-block">GET STARTED <i class="las la-angle-right"></i></a>
+                            <h3 class="featured alt " style=" font-weight: 500;">{{isset($title)?$title :''}} Services</h3>
+                            <h2 class="text-light">@lang('Introducing Affordable') : <span class="text">@lang('
+                                    Image Masking Service')</span></h2>
+                            <p class="text-light">@lang('Experience flawless image masking with us! Effortlessly extract intricate elements like hairs and furs. Seamlessly integrate subjects into any background. Elevate your editing game now!')</p>
+                            <a href="#" target="_blank" class="btn primary-button d-inline-block me-2">@lang('FREE TRAIL') <i class="las la-angle-right"></i></a>
+                            <a href="#" target="_blank" class="btn get_start_btn border-1 d-inline-block">@lang('GET STARTED') <i class="las la-angle-right"></i></a>
                         </div>
                     </div>
                 </div>
+                <div class="col-12 col-md-6">
+                   
+                </div>
+                
             </div>
         </div>
     </section>
@@ -434,8 +437,32 @@
   margin-left: 5px;
 }
 
+.sec_img {
+    background-image: url("{{asset('front-assets/images/real_estate/main.png')}}");
+    background-attachment: unset;
+    background-repeat: no-repeat;
+    height: 490px;
+    padding-top: 80px;
+    
+}
 
-/* jewelary-section-end */
+.sec_img::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Adjust the alpha (0.5) to control the darkness */
+}
+
+/* Adjust text color for better visibility */
+.sec_img h3,
+.sec_img h2,
+.sec_img p {
+    color: #fff !important; /* Set the text color to white or a suitable color for your design */
+}
+
 
 </style>
 @endpush

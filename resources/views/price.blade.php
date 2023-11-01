@@ -32,7 +32,7 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-lg-4">
+                <div class="col-lg-4 col-12">
                     <div class="input-group">
                         <span class="input-group-text">Services</span>
                         <select class="form-select services" id="service_name">
@@ -46,7 +46,7 @@
                         </select>
                     </div>
                 </div>
-                <div class="col-lg-4">
+                <div class="col-lg-5 col-12">
                     <div class="input-group">
                         <span class="input-group-text">Delivery</span>
                         <select class="form-select delivery" id="delivery_hour">
@@ -56,7 +56,7 @@
                         </select>
                     </div>
                 </div>
-                <div class="col-lg-4">
+                <div class="col-lg-3">
                     <div class="input-group">
                         <span class="input-group-text">Quantity</span>
                         <input type="number" class="form-control quantity bg-white" id="quantity" min=1 value="1"/>

@@ -63,7 +63,7 @@
     <section class=" offers sophisticated" >
         <div class="container">
             <div class="row align-items-center mb-5">
-                <div class="col-lg-4">
+                <div class="col-lg-4 col-12">
                     <style>
                         h1{
                             font-size: 3.0rem;
@@ -129,9 +129,7 @@
                     <div class="col-12 heading">
                         <h3 class="mb-0">@lang('Natural Baby Photo Editing Services')
                         </h3>
-                        <p class="mt-2 ">@lang('Unlock the advantages with premier infant photo editing services. We transform your exceptional captures into impeccable masterpieces.
-
-                            ')
+                        <p class="mt-2 ">@lang('Unlock the advantages with premier infant photo editing services. We transform your exceptional captures into impeccable masterpieces')
                         </p>
                     </div>
                 </div>
@@ -309,7 +307,7 @@
     </section>
 
     <!-- Pricing -->
-    <section id="pricing" class="section-1 plans title">
+    <section id="pricing " class="section-1 plans">
         <div class="container">
             <div class="row text-center intro">
                 <div class="col-12 heading">
@@ -321,103 +319,104 @@
             </div>
             <div class="row justify-content-center text-center items">
                 <div class="col-12 col-md-6 col-lg-4 align-self-center text-center item">
-                    <div class="card">
-                        {{-- <i class="icon icon-ring"></i> --}}
-                        <i class="icon las la-ring"></i>
+                    <div class="card-box pricing">
+                        <img src="{{asset('front-assets/images/background_remove/price icon/simple.png')}}" class="icon" alt="pricing icon">
+                       
                         <h4>@lang('Simple')</h4>
-                        <span class="price">@lang('$3.50 - $4.99')</span>
-                        <ul class="list-group list-group-flush">
+                        <span class="price">@lang('$0.99 - $1.99')</span>
+                        <ul class="list-group list-group-flush mt-3">
                             <li class="list-group-item d-flex justify-content-between align-items-center text-left">
                                 <span>@lang('Les design and simple edge')</span>
-                                <i class="icon-min m-0 icon-check text-right"></i>
+                                <i class="icon-min m-0 las la-check-circle text-right"></i>
                        
                             </li>
                             <li class="list-group-item d-flex justify-content-between align-items-center text-left">
                                 <span>@lang('Single diamond')</span>
-                                <i class="icon-min m-0 icon-check text-right"></i>
+                                <i class="icon-min m-0 las la-check-circle text-right"></i>
                             </li>
                             <li class="list-group-item d-flex justify-content-between align-items-center text-left">
                                 <span>@lang('Single gemstone')</span>
-                                <i class="icon-min m-0 icon-check text-right"></i>
+                                <i class="icon-min m-0 las la-check-circle text-right"></i>
                             </li>
                             <li class="list-group-item d-flex justify-content-between align-items-center text-left">
                                 <span>@lang('Cluster ring')</span>
-                                <i class="icon-min m-0 icon-check text-right"></i>
+                                <i class="icon-min m-0 las la-check-circle text-right"></i>
                             </li>
                             <li class="list-group-item d-flex justify-content-between align-items-center text-left">
                                 <span>@lang('Long chain')</span>
-                                <i class="icon-min m-0 icon-check text-right"></i>
+                                <i class="icon-min m-0 las la-check-circle text-right"></i>
                             </li>
                            
                         </ul>
-                        <a href="#" class="smooth-anchor btn mx-auto primary-button"><i class="icon-arrow-right-circle"></i>@lang('See Sample')</a>
+                        <a href="#" class="smooth-anchor btn mx-auto primary-button"><i class="las la-arrow-circle-right"></i>@lang('See Sample')</a>
                     </div>
                 </div>
                 <div class="col-12 col-md-6 col-lg-4 align-self-center text-center item">
-                    <div class="card">
-                        <img src="{{asset('front-assets/images/home/icon/diamond-ring.png')}}" class="icon" alt="pricing icon">
+                    <div class="card-box pricing">
+                        <img src="{{asset('front-assets/images/background_remove/price icon/medium.png')}}" class="icon" alt="pricing icon">
                         <h4>@lang('Medium')</h4>
-                        <span class="price">@lang('$5.00 - $8.99')</span>
-                        <ul class="list-group list-group-flush">
+                        <span class="price">@lang('$2.00 - $3.99')</span>
+                        <ul class="list-group list-group-flush mt-3">
                             <li class="list-group-item d-flex justify-content-between align-items-center text-left">
                                 <span>@lang('Curvy design')</span>
-                                <i class="icon-min m-0 icon-check text-right"></i>
+                                <i class="icon-min m-0 las la-check-circle text-right"></i>
                             </li>
                             <li class="list-group-item d-flex justify-content-between align-items-center text-left">
                                 <span>@lang('Multiple edges')</span>
-                                <i class="icon-min m-0 icon-check text-right"></i>
+                                <i class="icon-min m-0 las la-check-circle text-right"></i>
                             </li>
                             <li class="list-group-item d-flex justify-content-between align-items-center text-left">
                                 <span>@lang('Two colors')</span>
-                                <i class="icon-min m-0 icon-check text-right"></i>
+                                <i class="icon-min m-0 las la-check-circle text-right"></i>
                             </li>
                             <li class="list-group-item d-flex justify-content-between align-items-center text-left">
                                 <span>@lang('Double diamond')</span>
-                                <i class="icon-min m-0 icon-check text-right"></i>
+                                <i class="icon-min m-0 las la-check-circle text-right"></i>
                             </li>
                             <li class="list-group-item d-flex justify-content-between align-items-center text-left">
                                 <span>@lang('Double gemstone')</span>
-                                <i class="icon-min m-0 icon-check text-right"></i>
+                                <i class="icon-min m-0 las la-check-circle text-right"></i>
                             </li>
     
                         </ul>
-                        <a href="{{route('login')}}" class="smooth-anchor btn mx-auto primary-button"><i class="icon-arrow-right-circle"></i>@lang('See Sample')</a>
+                        <a href="{{route('login')}}" class="smooth-anchor btn mx-auto primary-button"><i class="las la-arrow-circle-right"></i>@lang('See Sample')</a>
                     </div>
                 </div>
                 <div class="col-12 col-md-6 col-lg-4 align-self-center text-center item">
-                    <div class="card">
-                        <i class="icon icon-diamond"></i>
+                    <div class="card-box pricing">
+                        <img src="{{asset('front-assets/images/background_remove/price icon/complex.png')}}" class="icon" alt="pricing icon">
                         
                         <h4>@lang('Complex')</h4>
                         <span class="price">@lang('Talk to us')</span>
-                        <ul class="list-group list-group-flush">
+                        <ul class="list-group list-group-flush mt-3">
                             <li class="list-group-item d-flex justify-content-between align-items-center text-left">
                                 <span>Complex design</span>
-                                <i class="icon-min m-0 icon-check text-right"></i>
+                                <i class="icon-min m-0 las la-check-circle text-right"></i>
                             </li>
                             <li class="list-group-item d-flex justify-content-between align-items-center text-left">
                                 <span>Group of Jewelry </span>
-                                <i class="icon-min m-0 icon-check text-right"></i>
+                                <i class="icon-min m-0 las la-check-circle text-right"></i>
                             </li>
                             <li class="list-group-item d-flex justify-content-between align-items-center text-left">
                                 <span>Numerous edge</span>
-                                <i class="icon-min m-0 icon-check text-right"></i>
+                                <i class="icon-min m-0 las la-check-circle text-right"></i>
                             </li>
                             <li class="list-group-item d-flex justify-content-between align-items-center text-left">
                                 <span>Multiple diamonds</span>
-                                <i class="icon-min m-0 icon-check text-right"></i>
+                                <i class="icon-min m-0 las la-check-circle text-right"></i>
                             </li>
                             <li class="list-group-item d-flex justify-content-between align-items-center text-left">
                                 <span>@lang('Multiple gemstones')</span>
-                                <i class="icon-min m-0 icon-check text-right"></i>
+                                <i class="icon-min m-0 las la-check-circle text-right"></i>
                             </li>
                         </ul>
-                        <a href="{{route('contact')}}" class="smooth-anchor btn mx-auto primary-button"><i class="icon-arrow-right-circle"></i>@lang('See Sample')</a>
+                        <a href="{{route('contact')}}" class="smooth-anchor btn mx-auto primary-button"><i class="las la-arrow-circle-right"></i>@lang('See Sample')</a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+
 
 
     <!-- Dedicated to exceeding expectation-->

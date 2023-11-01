@@ -319,14 +319,12 @@
 
 
     <!-- Pricing -->
-        <section id="pricing " class="section-1 plans title">
+    <section id="pricing " class="section-1 plans title">
         <div class="container">
             <div class="row text-center intro">
                 <div class="col-12 heading">
-                    <h3>@lang('Value-Based Pricing for Clipping Path Services
-                        ')</h3>
-                    <p class="text-max-800">@lang('The best clipping path service is available at a reasonable price. Get a price estimate for your particular needs. No additional fees or charges are included in our fixed rate.
-                        ')</p>
+                    <h3>@lang('Product Photo Editing Service Pricing')</h3>
+                    <p class="text-max-800">@lang('We guarantee uncompromised quality. Our pricing is both reasonable and transparent, while consistently upholding top-tier service.')</p>
                 </div>
             </div>
             <div class="row justify-content-center text-center items">
@@ -335,7 +333,7 @@
                         <img src="{{asset('front-assets/images/clipping_path/price/simple.png')}}" class="icon" alt="pricing icon">
                        
                         <h4>@lang('Simple')</h4>
-                        <span class="price">@lang('$3.50 - $4.99')</span>
+                        <span class="price">@lang('$1.00 - $2.99')</span>
                         <ul class="list-group list-group-flush mt-4">
                             <li class="list-group-item d-flex justify-content-between align-items-center text-left">
                                 <span>@lang('Les design and simple edge')</span>
@@ -367,7 +365,7 @@
                     <div class="card-box pricing">
                         <img src="{{asset('front-assets/images/clipping_path/price/medium.png')}}" class="icon" alt="pricing icon">
                         <h4>@lang('Medium')</h4>
-                        <span class="price">@lang('$5.00 - $8.99')</span>
+                        <span class="price">@lang('$3.00 - $7.99')</span>
                         <ul class="list-group list-group-flush mt-4">
                             <li class="list-group-item d-flex justify-content-between align-items-center text-left">
                                 <span>@lang('Curvy design')</span>
